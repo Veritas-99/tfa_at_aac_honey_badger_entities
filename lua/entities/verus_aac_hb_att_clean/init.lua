@@ -1,9 +1,9 @@
-AddCSLuaFile("entities/verus_ubarrel_laser/cl_init.lua")
-AddCSLuaFile("entities/verus_ubarrel_laser/shared.lua")
-include("entities/verus_ubarrel_laser/shared.lua")
+AddCSLuaFile("entities/verus_aac_hb_att_clean/cl_init.lua")
+AddCSLuaFile("entities/verus_aac_hb_att_clean/shared.lua")
+include("entities/verus_aac_hb_att_clean/shared.lua")
 
 function ENT:Initialize()
-    self:SetModel("models/props/CS_militia/footlocker01_closed.mdl")
+    self:SetModel("models/props/CS_militia/circularsaw01.mdl")
     self:SetModelScale(0.5)
     self:PhysicsInit(SOLID_VPHYSICS)
     self:SetMoveType(MOVETYPE_VPHYSICS)
@@ -25,8 +25,13 @@ function ENT:Use(actor, caller, useType, value)
     local wep = actor:GetActiveWeapon()
 
     if self:compatible(wep) then
-        wep:Attach(self.Attachment)
-        self:EmitSound("npc/combine_soldier/gear3.wav", 75)
+        for k, v in pairs(wep.AttachmentCache) do
+            if v ~= false then
+                wep:Detach(k)
+            end
+        end
+
+        self:EmitSound("weapons/ar2/ar2_reload.wav", 75)
         self:Remove()
     end
 end

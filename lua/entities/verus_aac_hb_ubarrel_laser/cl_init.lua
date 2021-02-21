@@ -1,4 +1,4 @@
-include("entities/verus_ubarrel_laser/shared.lua")
+include("entities/verus_aac_hb_ubarrel_laser/shared.lua")
 
 function ENT:Draw()
     self:DrawModel()
