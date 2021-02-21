@@ -1,0 +1,10 @@
+{
+	"title"		:	"[TFA][AT] AAC Honey Badger Entities",
+	"type"		:	"tool",
+	"tags"		:	[ "roleplay", "realism" ],
+	"ignore"	:
+	[
+		"*.md",
+		"*git*"
+	]
+}
