@@ -3,7 +3,7 @@ ENT.Base = "base_gmodentity"
 ENT.PrintName = "Grip"
 ENT.Spawnable = true
 ENT.RenderGroup = RENDERGROUP_BOTH
-ENT.Category = "[TFA][AT] INS2 Shared Parts"
+ENT.Category = "[TFA][AT] AAC Honey Badger"
 ENT.Attachment = "ins2_fg_grip"
 
 function ENT:compatible(wep)
